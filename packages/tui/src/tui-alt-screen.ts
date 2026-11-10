@@ -1735,6 +1735,7 @@ export class TuiAltScreen extends TuiBase implements ViewportTUI {
 		const imagesNeedRedraw = imageAnchorsNeedRedraw || imageCellsNeedRedraw;
 		const redrawImages = fullRedraw || imagesNeedRedraw;
 		const hadUploadedKittyImages = this.uploadedKittyImages.size > 0;
+		if (fullRedraw) this.uploadedKittyImages.clear();
 		const preparedKittyScreen =
 			redrawImages && this.imageProtocol === "kitty"
 				? this.prepareKittyScreen(screen)
